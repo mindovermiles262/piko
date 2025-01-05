@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Set the VERSION to $1, otherwise get it from `git describe`
-GIT_VERSION=$(git describe)
+GIT_VERSION=$(git describe || echo "NONE")
 VERSION="${1:-$GIT_VERSION}"
 
 declare -a arr=(
