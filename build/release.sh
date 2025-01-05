@@ -16,5 +16,5 @@ fi
 
 gh release create \
   $1 \
-  bin/artifacts/ \
+  bin/artifacts/* \
   --generate-notes
