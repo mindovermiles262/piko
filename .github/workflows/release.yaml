@@ -8,7 +8,7 @@ on:
 
 env:
   # GH_TAG: ${{github.ref_name}}
-  GH_TAG: v0.0.1
+  GH_TAG: v0.0.2
 
 permissions:
   contents: write
