@@ -7,9 +7,9 @@ VERSION="${1:-$GIT_VERSION}"
 
 declare -a arr=(
 	"linux/amd64"
-	"linux/arm64"
-	"darwin/amd64"
-	"darwin/arm64"
+	# "linux/arm64"
+	# "darwin/amd64"
+	# "darwin/arm64"
 )
 
 mkdir -p bin/artifacts

@@ -7,7 +7,8 @@ on:
   #     - "v*"
 
 env:
-  GH_TAG: ${{github.ref_name}}
+  # GH_TAG: ${{github.ref_name}}
+  GH_TAG: v0.0.1
 
 permissions:
   contents: write
@@ -33,8 +34,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-release-binaries]
     steps:
+      # https://github.com/actions/checkout
+      - uses: actions/checkout@v4
       # https://github.com/actions/download-artifact
-      - uses: actions/upload-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: binaries
           path: bin/artifacts/
