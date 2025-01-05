@@ -31,6 +31,7 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    needs: [build-release-binaries]
     steps:
       # https://github.com/actions/download-artifact
       - uses: actions/upload-artifact@v4
