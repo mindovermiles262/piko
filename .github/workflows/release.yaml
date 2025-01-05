@@ -15,7 +15,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build Artifacts
-        run: build/artifacts.sh
+        env:
+          GH_TAG: ${{ github.ref_name }}
+        run: build/artifacts.sh $GH_TAG
   # release:
   #   name: Release
   #   runs-on: ubuntu-latest
