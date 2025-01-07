@@ -24,15 +24,18 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           context: .
-          build-args: version=$GH_TAG
+          build-args: version=0.0.0
           file: build/Dockerfile
           platforms: linux/arm64,linux/amd64
           push: false
