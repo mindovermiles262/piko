@@ -1,14 +1,12 @@
 name: Create release
 
 on:
-  pull_request:
-  # push:
-  #   tags:
-  #     - "v*"
+  push:
+    tags:
+      - "v*"
 
 env:
-  # GH_TAG: ${{github.ref_name}}
-  GH_TAG: "v0.0.0"
+  GH_TAG: ${{github.ref_name}}
 
 permissions:
   contents: write
@@ -39,12 +37,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure Docker Tags
+        # Hopefully no one will ever need to use this action again. So dumb.
+        # https://github.com/docker/metadata-action
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ghcr.io/andydunstall/piko
-
-      - run: cat ${{ steps.meta }}
 
       - name: Build and push
         uses: docker/build-push-action@v6
