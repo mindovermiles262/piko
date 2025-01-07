@@ -45,10 +45,10 @@ jobs:
           echo "Updating Piko Helm Chart to Version $GH_TAG"
           sed -i'' "s/$CAPTURE_GROUP/$REPLACEMENT/" $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
           cat $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
-          # git config --global user.name 'Github Action Release'
-          # git config --global user.email 'noreply'
-          # git commit -am "chore: bump helm chart version"
-          # git push
+          git config --global user.name 'Github Action Release'
+          git config --global user.email 'noreply'
+          git commit -am "chore: bump helm chart version"
+          git push
 
   # release:
   #   name: Release
