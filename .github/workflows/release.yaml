@@ -42,7 +42,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/andydunstall/piko
+          images: ghcr.io/${{github.actor}}/piko
 
       - name: Build and push
         uses: docker/build-push-action@v6
