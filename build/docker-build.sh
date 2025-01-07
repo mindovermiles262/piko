@@ -9,8 +9,7 @@ fi
 
 docker build \
   --build-arg version="$1" \
-  --platform=linux/amd64,linux/arm64 \
-  -f ./Dockerfile \
+  -f build/Dockerfile \
   -t "ghcr.io/andydunstall/piko:$1" \
   -t "ghcr.io/andydunstall/piko:latest" \
   .
