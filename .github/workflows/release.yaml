@@ -41,7 +41,7 @@ jobs:
           sed -i'' "s/$CAPTURE_GROUP/$REPLACEMENT/" $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -am "chore: bump helm chart version"
+          git commit -am "[bot] bump helm chart to version $GH_TAG"
           git push origin HEAD:main
 
   release:
