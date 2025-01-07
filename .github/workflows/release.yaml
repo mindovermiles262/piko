@@ -32,8 +32,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          build-args:
-            - version=$GH_TAG
+          build-args: ["version=$GH_TAG"]
           file: build/Dockerfile
           platforms:
             - linux/arm64
