@@ -2,9 +2,9 @@ name: Create release
 
 on:
   pull_request:
-  # push:
-  #   tags:
-  #     - "v*"
+  push:
+    tags:
+      - "v*"
 
 env:
   # GH_TAG: ${{github.ref_name}}
@@ -44,9 +44,8 @@ jobs:
           REPLACEMENT="appVersion\:\ \"$GH_TAG\""
           echo "Updating Piko Helm Chart to Version $GH_TAG"
           sed -i'' "s/$CAPTURE_GROUP/$REPLACEMENT/" $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
-          cat $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
           echo "***"
-          env
+          echo $GITHUB_HEAD_REF
           echo "***"
           git config --global user.name 'Github Action Release'
           git config --global user.email 'noreply'
