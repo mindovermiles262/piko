@@ -41,12 +41,13 @@ jobs:
         run: |
           CAPTURE_GROUP="appVersion:\ \"v[0-9]\+\.[0-9]\+\.[0-9]\+\""
           REPLACEMENT="appVersion\:\ \"$GH_TAG\""
-          sed --version
+          echo "Starting"
           sed -i'' "s/$CAPTURE_GROUP/$REPLACEMENT/" $GITHUB_WORKSPACE/operations/helm/piko/Chart.yaml
-          git config --global user.name 'Github Action Release'
-          git config --global user.email 'noreply'
-          git commit -am "chore: bump helm chart version"
-          git push
+          echo "DONE"
+          # git config --global user.name 'Github Action Release'
+          # git config --global user.email 'noreply'
+          # git commit -am "chore: bump helm chart version"
+          # git push
 
   # release:
   #   name: Release
