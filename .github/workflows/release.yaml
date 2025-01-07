@@ -35,11 +35,11 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          build-args: version=0.0.0
+          # build-args: version=0.0.0
           file: build/Dockerfile
-          platforms: linux/arm64,linux/amd64
+          # platforms: linux/arm64,linux/amd64
           push: false
-          tags: "ghcr.io/andydunstall/piko:$GH_TAG","ghcr.io/andydunstall/piko:latest"
+          # tags: "ghcr.io/andydunstall/piko:$GH_TAG","ghcr.io/andydunstall/piko:latest"
 
   # build-release-binaries:
   #   name: Build Relase Binaries
