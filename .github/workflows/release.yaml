@@ -24,7 +24,7 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v4
       - name: Build container images
-        run: build/docker-build.sh
+        run: build/docker-build.sh $GH_TAG
 
 
   # build-release-binaries:
