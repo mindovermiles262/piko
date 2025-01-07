@@ -45,8 +45,8 @@ jobs:
           build-args: version=$GH_TAG
           file: build/Dockerfile
           platforms: linux/arm64,linux/amd64
-          push: false
-          tags: andydunstall/piko:one,andydunstall/piko:two
+          push: true
+          tags: andydunstall/piko:"$GH_TAG",andydunstall/piko:two
 
   # build-release-binaries:
   #   name: Build Relase Binaries
