@@ -44,6 +44,8 @@ jobs:
         with:
           images: ghcr.io/andydunstall/piko
 
+      - run: cat ${{ steps.meta }}
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -52,7 +54,7 @@ jobs:
           file: build/Dockerfile
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: andydunstall/piko:${{github.ref_name}},andydunstall/piko:two
+          tags: ${{ steps.meta.outputs.tags }}
 
   # build-release-binaries:
   #   name: Build Relase Binaries
